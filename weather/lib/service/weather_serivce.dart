@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import 'package:weather/models/weather_model.dart';
+import 'package:first_app/models/weather_model.dart';
 import 'package:http/http.dart' as http;
+import 'package:weather/models/weather_model.dart';
 
 class WeatherService {
   static const BASE_URL = 'http://api.openweathermap.org/data/2.5/weather';
@@ -14,7 +15,7 @@ class WeatherService {
     if (response.statusCode == 200) {
       return Weather.fromJson(jsonDecode(response.body));
     } else {
-      throw Exception('Faild to Load Weather Data');
+      throw Exception('Failed to Load Weather Data');
     }
   }
 }
